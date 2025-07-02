@@ -10,5 +10,5 @@ requests
 tqdm
 feedparser
 pydantic
-chromadb
+chromadb == 0.5.20
 gradio

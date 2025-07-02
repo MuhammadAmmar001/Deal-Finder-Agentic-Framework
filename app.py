@@ -1,7 +1,9 @@
+import os
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 import gradio as gr
 from deals import Opportunity
 from Agentic_Framework import Agentic_Framework 
-import os
+
 
 PORT = int(os.environ.get("PORT", 7860))
 class App:
@@ -34,10 +36,7 @@ class App:
                 opportunities = self.agentic_framework.memory
                 opportunity = opportunities[deal_index]
                 self.agentic_framework.planner_agent.msg_agent.alert(opportunity)
-            
-            def test():
-                print("Works")
-                return "working"
+        
 
             with gr.Row():
                 gr.Markdown('<div style="text-align:center;font-size:20px">Deal Finder - An Autonomous Agentic Framework</div>')

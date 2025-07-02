@@ -30,8 +30,8 @@ class Agentic_Framework:
     DB = "product_vectorstore"
     COLLECTION_NAME = "products"
     
-    os.environ["ANONYMIZED_TELEMETRY"] = "False"
     def __init__(self):
+        os.environ["ANONYMIZED_TELEMETRY"] = "False"
         init_logging()
         self.log("AGENTIC FRAMEWORK IS INITIALIZING")
         self.planner_agent = None
