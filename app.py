@@ -60,7 +60,7 @@ class App:
 
             opps_df.select(select_deal)
         
-        ui.launch(share=False,inbrowser = True,server_name="0.0.0.0",server_port = PORT)
+        ui.launch(server_name="0.0.0.0",server_port = PORT)
 
 if __name__ == "__main__":
     App().run()
