@@ -11,3 +11,4 @@ tqdm
 feedparser
 pydantic
 chromadb
+gradio
