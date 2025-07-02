@@ -50,8 +50,8 @@ class App:
                     max_height = 1000,
                     column_widths = [7,1,1,1,2]
                 )
-            with gr.Row():
-               ts = gr.Textbox(label="Status",interactive=False)
+            # with gr.Row():
+            #    ts = gr.Textbox(label="Status",interactive=False)
             ui.load(start,inputs=[],outputs=[opps_df])
             timer = gr.Timer(value=60)
             timer.tick(update, inputs=[], outputs=[opps_df])
