@@ -7,8 +7,8 @@ import urllib
 from deals import Opportunity
 
 class Messaging_Agent(Agent):
-    name:"MESSAGING AGENT"
-    color:Agent.CYAN
+    name = "MESSAGING AGENT"
+    color = Agent.CYAN
 
     def __init__(self):
         self.log("MESSAGING AGENT IS INITIALIZING")

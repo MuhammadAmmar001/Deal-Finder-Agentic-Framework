@@ -30,10 +30,12 @@ class Agentic_Framework:
     DB = "product_vectorstore"
     COLLECTION_NAME = "products"
     
+    os.environ["ANONYMIZED_TELEMETRY"] = "False"
     def __init__(self):
         init_logging()
         self.log("AGENTIC FRAMEWORK IS INITIALIZING")
         self.planner_agent = None
+
         self.client = chromadb.PersistentClient(self.DB)
         self.collection = self.client.get_or_create_collection(self.COLLECTION_NAME)
         self.memory = self.read_memory()
