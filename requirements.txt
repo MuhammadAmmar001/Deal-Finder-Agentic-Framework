@@ -12,3 +12,4 @@ feedparser
 pydantic
 chromadb == 0.5.20
 gradio
+modal

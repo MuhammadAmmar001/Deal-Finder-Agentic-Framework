@@ -3,6 +3,7 @@ os.environ["ANONYMIZED_TELEMETRY"] = "False"
 import gradio as gr
 from deals import Opportunity
 from Agentic_Framework import Agentic_Framework 
+import modal
 
 
 PORT = int(os.environ.get("PORT", 7860))
@@ -18,7 +19,9 @@ class App:
                 return [[opp.deal.product_description, f"${opp.deal.price:.2f}", f"${opp.estimate:.2f}", f"${opp.discount:.2f}", opp.deal.url] for opp in opps]
             
             def start():
-                self.agentic_framework = Agentic_Framework()
+                Agentic_Framework = modal.Cls.lookup("Agentic_Framework","Agent_Env")
+                Agentic_Framework_Obj = Agentic_Framework()
+                self.agentic_framework = Agentic_Framework_Obj.call.remote()
                 opportunities = self.agentic_framework.memory
                 table = table_for(opportunities)
                 return table
